@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace SoftwareTestApplication.ViewModels
 {
-    internal class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         #region Private Properties
         private string _InputValues;
@@ -46,9 +46,9 @@ namespace SoftwareTestApplication.ViewModels
             }
         }
 
-        public ICommand LargestValue { get => _LargestValue; set => _LargestValue = value; }
-        public ICommand SumOddValues { get => _SumOddValues; set => _SumOddValues = value; }
-        public ICommand SumEvenValues { get => _SumEvenValues; set => _SumEvenValues = value; }
+        public ICommand LargestValue { get => _LargestValue; private set => _LargestValue = value; }
+        public ICommand SumOddValues { get => _SumOddValues; private set => _SumOddValues = value; }
+        public ICommand SumEvenValues { get => _SumEvenValues; private set => _SumEvenValues = value; }
 
         public Brush ResultColor
         {
