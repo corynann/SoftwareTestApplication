@@ -17,6 +17,16 @@ namespace SoftwareTestApplication.UnitTests
 
             for (int i = 0; i < count; i++)
             {
+                int val = random.Next(int.MinValue / count, int.MaxValue / count);
+
+                list.Add(val);
+            }
+
+            return list;
+        }
+
+            for (int i = 0; i < count; i++)
+            {
                 int val = random.Next();
 
                 if (IsPossitve.Next() % 2 != 0)
