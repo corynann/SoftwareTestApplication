@@ -7,7 +7,8 @@ using System.Linq;
 
 namespace SoftwareTestApplication.UnitTests
 {
-    public class Tests
+    [TestFixture]
+    public class UnitTest_Basic
     {
         int listLength = 5;
 
@@ -19,7 +20,7 @@ namespace SoftwareTestApplication.UnitTests
 
         [Test]
         //Scenero_ExpectedBehavior
-        public void FindMaxValueBy_ListOfInts_Max()
+        public void FindMaxValueBy_ListOfInts_ReturnsTrue()
         {
             //Arrange
             var mainVM = new MainViewModel();
@@ -37,7 +38,7 @@ namespace SoftwareTestApplication.UnitTests
         }
 
         [Test]
-        public void FindMaxValueBy_ListOfInts_SumEvenValues()
+        public void FindSumOfEvenValuesBy_ListOfInts_ReturnsTrue()
         {
             //Arrange
             var mainVM = new MainViewModel();
@@ -54,7 +55,7 @@ namespace SoftwareTestApplication.UnitTests
             Assert.IsTrue(matchingVal);
         }
         [Test]
-        public void FindMaxValueBy_ListOfInts_SumOddValues()
+        public void FindSumOfOddValuesBy_ListOfInts_ReturnsTrue()
         {
             //Arrange
             var mainVM = new MainViewModel();
