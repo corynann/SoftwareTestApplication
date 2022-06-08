@@ -25,11 +25,18 @@ namespace SoftwareTestApplication.UnitTests
             return list;
         }
 
+        internal static List<double> RandomDoubles(int count)
+        {
+            List<double> list = new List<double>();
+
+            Random random = new Random();
+            Random IsPossitve = new Random();
+
             for (int i = 0; i < count; i++)
             {
                 int val = random.Next();
 
-                if (IsPossitve.Next() % 2 != 0)
+                if (Math.Round((double)IsPossitve.Next(), 0) % 2 != 0)
                     val = val * -1;
 
                 list.Add(val);
