@@ -83,12 +83,12 @@ namespace SoftwareTestApplication.ViewModels
         }
         private void GetSumOddValues(object obj)
         {
-            int result = 0;
+            double result = 0;
             foreach (double value in _Values)
             {
                 if(value % 1 == 0 && value % 2 != 0)
                 {
-                    result += (int)value;
+                    result += value;
                 }
             }
 
@@ -96,13 +96,13 @@ namespace SoftwareTestApplication.ViewModels
         }
         private void GetSumEvenValues(object obj)
         {
-            int result = 0;
+            double result = 0;
 
             foreach (double value in _Values)
             {
                 if (value % 2 == 0)
                 {
-                    result += (int)value;
+                    result += value;
                 }
             }
 
@@ -139,7 +139,7 @@ namespace SoftwareTestApplication.ViewModels
         {
             if(OutputValues == string.Empty) { return; }
 
-            int outputValue = Convert.ToInt32(OutputValues);
+            double outputValue = Convert.ToDouble(OutputValues);
 
             if(outputValue > 0)
             {
