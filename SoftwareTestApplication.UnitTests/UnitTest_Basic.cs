@@ -10,7 +10,7 @@ namespace SoftwareTestApplication.UnitTests
     [TestFixture]
     public class UnitTest_Basic
     {
-        int listLength = 5;
+        int listLength = 10;
 
 
         [SetUp]
@@ -19,7 +19,6 @@ namespace SoftwareTestApplication.UnitTests
         }
 
         [Test]
-        //Scenero_ExpectedBehavior
         public void FindMaxValueBy_ListOfInts_ReturnsTrue()
         {
             //Arrange
@@ -33,8 +32,7 @@ namespace SoftwareTestApplication.UnitTests
             //Assert
             string maxVal = values.Max().ToString();
 
-            bool matchingVal = maxVal == mainVM.OutputValues;
-            Assert.IsTrue(matchingVal);
+            Assert.That(maxVal == mainVM.OutputValues);
         }
 
         [Test]
@@ -51,8 +49,7 @@ namespace SoftwareTestApplication.UnitTests
             //Assert
             string evenSum = values.Where(x => x % 2 == 0).Sum().ToString();
 
-            bool matchingVal = evenSum == mainVM.OutputValues;
-            Assert.IsTrue(matchingVal);
+            Assert.That(evenSum == mainVM.OutputValues);
         }
         [Test]
         public void FindSumOfOddValuesBy_ListOfInts_ReturnsTrue()
@@ -68,8 +65,24 @@ namespace SoftwareTestApplication.UnitTests
             //Assert
             string oddSum = values.Where(x => (x % 2 != 0 && x % 1 == 0)).Sum().ToString();
 
-            bool matchingVal = oddSum == mainVM.OutputValues;
-            Assert.IsTrue(matchingVal);
+            Assert.That(oddSum == mainVM.OutputValues);
+        }
+
+        [Test]
+        public void FindMaxValueBy_ListOfDouble_ReturnsTrue()
+        {
+            //Arrange
+            var mainVM = new MainViewModel();
+            List<double> values = Utilities.RandomDoubles(listLength);
+
+            //Act
+            mainVM.InputValues = String.Join(",", values.Select(x => x.ToString()).ToArray());
+            mainVM.LargestValue.Execute(null);
+
+            //Assert
+            string maxVal = values.Max().ToString();
+
+            Assert.That(maxVal == mainVM.OutputValues);
         }
     }
 }
