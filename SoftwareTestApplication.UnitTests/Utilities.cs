@@ -34,10 +34,7 @@ namespace SoftwareTestApplication.UnitTests
 
             for (int i = 0; i < count; i++)
             {
-                int val = random.Next();
-
-                if (Math.Round((double)IsPossitve.Next(), 0) % 2 != 0)
-                    val = val * -1;
+                double val = random.Next((int)(double.MinValue / count), (int)(double.MaxValue / count)) ;
 
                 list.Add(val);
             }
